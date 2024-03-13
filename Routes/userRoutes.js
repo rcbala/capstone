@@ -1,5 +1,5 @@
 import express from "express";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { generateToken, getByEmail } from "../Controllers/userController.js";
 import User from "../Models/userModel.js";
 

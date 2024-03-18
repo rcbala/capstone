@@ -47,14 +47,14 @@ router.get("/user/data", async (req, res) => {
 
 router.post("/create/blog", async (req, res) => {
   try {
-    //create
+    
     const CreateBlog = await createBlog(req);
-    //error
+    
     if (!CreateBlog) {
       res.status(200).json({ error: "error create blog" });
     }
 
-    //response
+  
     return res.status(200).json({
       data: CreateBlog,
       message: "Blog created sucessfully",
@@ -69,17 +69,17 @@ router.post("/create/blog", async (req, res) => {
 
 router.put("/update/blog/:id", async (req, res) => {
   try {
-    //update
+    
 
     const updateBlog = await UpdateBlog(req);
 
-    //error
+  
 
     if (!updateBlog) {
       res.status(200).json({ error: "blog cannot be update" });
     }
 
-    //res
+    
     return res.status(200).json({
       data: updateBlog,
       message: "Blog update sucessfully",
@@ -94,16 +94,16 @@ router.put("/update/blog/:id", async (req, res) => {
 
 router.delete("/delete/blog/:id", async (req, res) => {
   try {
-    //update with params id
+    
 
     const DeleteBlog = await deleteBlog(req);
 
-    //error update
+    
 
     if (!DeleteBlog) {
       res.status(200).json({ error: "blog cannot be delete" });
     }
-    //response
+  
     return res.status(200).json({
       message: "Blog deleted sucessfully",
     });
